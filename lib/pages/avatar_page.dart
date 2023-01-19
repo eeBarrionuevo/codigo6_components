@@ -21,6 +21,8 @@ class AvatarPage extends StatelessWidget {
           //   "https://images.pexels.com/photos/10162536/pexels-photo-10162536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
           // ),
           FadeInImage(
+            fadeInDuration: Duration(seconds: 5),
+            fadeInCurve: Curves.bounceIn,
             placeholder: AssetImage("assets/images/loading.gif"),
             image: NetworkImage(
                 "https://images.pexels.com/photos/10162536/pexels-photo-10162536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),

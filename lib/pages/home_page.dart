@@ -1,3 +1,4 @@
+import 'package:codigo6_components/pages/alert_page.dart';
 import 'package:codigo6_components/pages/avatar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -100,8 +101,8 @@ class HomePage extends StatelessWidget {
                   description: "Detalle de las alertas",
                   icon: Icons.add_alert,
                   onTap: () {
-                    int total = 1 + 2;
-                    print(total);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AlertPage()));
                   },
                 ),
                 ItemMenuWidget(

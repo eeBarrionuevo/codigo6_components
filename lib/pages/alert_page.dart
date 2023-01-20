@@ -63,6 +63,11 @@ class AlertPage extends StatelessWidget {
               //     size: 30.0,
               //   ),
               // ),
+
+              const SizedBox(
+                height: 12.0,
+              ),
+
               Container(
                 padding: const EdgeInsets.all(12.0),
                 decoration: const BoxDecoration(
@@ -76,6 +81,11 @@ class AlertPage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+
+              const SizedBox(
+                height: 10.0,
+              ),
+
               Text(
                 "Amanda Johnson",
                 style: GoogleFonts.poppins(
@@ -90,6 +100,9 @@ class AlertPage extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 11.0,
                 ),
+              ),
+              const SizedBox(
+                height: 12.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -116,19 +129,71 @@ class AlertPage extends StatelessWidget {
                   ),
                 ],
               ),
-
+              const SizedBox(
+                height: 12.0,
+              ),
               Container(
+                padding: const EdgeInsets.all(8.0),
                 width: double.infinity,
-                height: 54,
-                color: Color(0xffF7F9FC),
+                height: 60,
+                decoration: BoxDecoration(
+                  color: const Color(0xffF7F9FC),
+                  border: Border.all(
+                    color: const Color(0xff51688F).withOpacity(0.17),
+                  ),
+                ),
                 child: Text(
                   "Additional Comments...",
                   style: GoogleFonts.poppins(
-                    color: Color(0xff51688F),
+                    color: const Color(0xff51688F),
                     fontWeight: FontWeight.w500,
                     fontSize: 12.0,
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 12.0,
+              ),
+              Row(
+                children: [
+                  // ElevatedButton(
+                  //   style: ElevatedButton.styleFrom(
+                  //     backgroundColor: Colors.transparent,
+                  //     elevation: 0,
+                  //   ),
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     "Not Now",
+                  //   ),
+                  // ),
+                  Expanded(
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        side: BorderSide(
+                          color: const Color(0xff51688F).withOpacity(0.17),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Not Now",
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 8.0,
+                  ),
+                  Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xff789BD6),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "Submit Review",
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

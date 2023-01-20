@@ -1,5 +1,6 @@
 import 'package:codigo6_components/pages/alert_page.dart';
 import 'package:codigo6_components/pages/avatar_page.dart';
+import 'package:codigo6_components/pages/card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -106,11 +107,12 @@ class HomePage extends StatelessWidget {
                   },
                 ),
                 ItemMenuWidget(
-                  title: "asdasdsad",
-                  description: "Detalle asdasdasd las alertas",
-                  icon: Icons.add_alert,
+                  title: "Cards",
+                  description: "Detalle de los cards",
+                  icon: Icons.card_giftcard,
                   onTap: () {
-                    print("Bienvenidos");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CardPage()));
                   },
                 ),
               ],

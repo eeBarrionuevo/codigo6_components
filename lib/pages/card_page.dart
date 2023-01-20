@@ -139,18 +139,38 @@ class CardPage extends StatelessWidget {
           // Container 3
 
           Container(
-            color: Colors.pink,
             margin: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(14.0),
+              border: Border.all(
+                color: Colors.black.withOpacity(0.18),
+              ),
+            ),
             child: Row(
               children: [
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "La Liga de la Justicia",
+                        style: GoogleFonts.sourceSansPro(
+                          fontSize: 16.0,
+                          height: 1,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Text(
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        style: GoogleFonts.sourceSansPro(
+                          fontSize: 14.0,
+                          height: 1,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ],
                   ),
@@ -158,7 +178,7 @@ class CardPage extends StatelessWidget {
                 Container(
                   height: 140,
                   width: 140,
-                  margin: EdgeInsets.all(12.0),
+                  // margin: EdgeInsets.all(30.0),
                   decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(14.0),

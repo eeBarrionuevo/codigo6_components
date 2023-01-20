@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AlertPage extends StatelessWidget {
-  myAlert(BuildContext context) {
+  void myAlert(BuildContext context) {
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -33,7 +33,7 @@ class AlertPage extends StatelessWidget {
     );
   }
 
-  myAlert2(BuildContext context) {
+  void myAlert2(BuildContext context) {
     showDialog(
       context: context,
       barrierDismissible: true,
@@ -51,32 +51,70 @@ class AlertPage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Divider(
+              const Divider(
                 thickness: 1.2,
               ),
-              CircleAvatar(
-                backgroundColor: Color(0xff789BD6),
-                radius: 26.0,
-                child: Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 30.0,
-                ),
-              ),
+              // CircleAvatar(
+              //   backgroundColor: Color(0xff789BD6),
+              //   radius: 26.0,
+              //   child: Icon(
+              //     Icons.person,
+              //     color: Colors.white,
+              //     size: 30.0,
+              //   ),
+              // ),
               Container(
-                padding: EdgeInsets.all(12.0),
-                decoration: BoxDecoration(
-                  color: Colors.red,
+                padding: const EdgeInsets.all(12.0),
+                decoration: const BoxDecoration(
+                  color: Color(0xff789BD6),
                   // borderRadius: BorderRadius.circular(100.0),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.person,
                   size: 30.0,
+                  color: Colors.white,
                 ),
               ),
               Text(
                 "Amanda Johnson",
+                style: GoogleFonts.poppins(
+                  color: Color(0xff51688F),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                "Rate the care provided Sanday, Jan 9",
+                style: GoogleFonts.poppins(
+                  color: Color(0xff51688F),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 11.0,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffFFBC6B),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffFFBC6B),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffFFBC6B),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffFFBC6B),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Color(0xffDFE4ED),
+                  ),
+                ],
               ),
             ],
           ),

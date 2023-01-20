@@ -116,6 +116,20 @@ class AlertPage extends StatelessWidget {
                   ),
                 ],
               ),
+
+              Container(
+                width: double.infinity,
+                height: 54,
+                color: Color(0xffF7F9FC),
+                child: Text(
+                  "Additional Comments...",
+                  style: GoogleFonts.poppins(
+                    color: Color(0xff51688F),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12.0,
+                  ),
+                ),
+              ),
             ],
           ),
         );

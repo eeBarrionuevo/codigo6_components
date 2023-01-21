@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ListPage extends StatelessWidget {
-  List superheroes = [
+  List<Map<String, dynamic>> superheroes = [
     {
       "superhero": "Batman",
       "publisher": "DC Comics",
@@ -271,6 +271,47 @@ class ListPage extends StatelessWidget {
       //     );
       //   },
       // ),
+
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            padding: const EdgeInsets.all(14.0),
+            margin:
+                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(16.0),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(14),
+                  child: Image.network(
+                    "https://www.dc.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg",
+                    height: 280.0,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Text(
+                  "Batman",
+                ),
+                Text(
+                  "Bruce Wayne",
+                ),
+                Text(
+                  "DC Comics",
+                ),
+                Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }

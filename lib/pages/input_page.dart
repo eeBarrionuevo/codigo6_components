@@ -85,6 +85,51 @@ class InputPage extends StatelessWidget {
             const SizedBox(
               height: 30.0,
             ),
+            Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.07),
+                    blurRadius: 12,
+                    offset: const Offset(5, 5),
+                  ),
+                ],
+              ),
+              child: TextField(
+                style: GoogleFonts.manrope(
+                  fontSize: 14.0,
+                ),
+                decoration: InputDecoration(
+                  hintText: "Ingresa tu teléfono...",
+                  hintStyle: TextStyle(
+                    color: Colors.black.withOpacity(0.4),
+                  ),
+                  fillColor: Colors.white,
+                  filled: true,
+                  prefixIcon: Icon(
+                    Icons.phone,
+                    color: Colors.black.withOpacity(0.4),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 14.0,
+                    vertical: 14.0,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    //UnderlineInputBorder
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    //UnderlineInputBorder
+                    borderRadius: BorderRadius.circular(16.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
             TextField(),
           ],
         ),

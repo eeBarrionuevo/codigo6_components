@@ -295,17 +295,45 @@ class ListPage extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                const SizedBox(
+                  height: 4.0,
+                ),
                 Text(
                   "Batman",
+                  style: GoogleFonts.manrope(
+                    fontSize: 26.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black.withOpacity(0.80),
+                  ),
                 ),
                 Text(
                   "Bruce Wayne",
+                  style: GoogleFonts.manrope(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black.withOpacity(0.80),
+                  ),
                 ),
                 Text(
                   "DC Comics",
+                  style: GoogleFonts.manrope(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black.withOpacity(0.80),
+                  ),
                 ),
                 Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.manrope(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black.withOpacity(0.80),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8.0,
                 ),
               ],
             ),

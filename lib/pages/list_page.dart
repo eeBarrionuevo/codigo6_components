@@ -19,7 +19,7 @@ class ListPage extends StatelessWidget {
       "first_appearance": "Action Comics #1",
       "characters": "Kal-El",
       "image":
-          "https://www.dc.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg"
+          "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2021/06/superman-2354819.jpg?itok=fLKSmYUP"
     },
     {
       "superhero": "Flash",
@@ -28,7 +28,7 @@ class ListPage extends StatelessWidget {
       "first_appearance": "Flash Comics #1",
       "characters": "Jay Garrick, Barry Allen, Wally West, Bart Allen",
       "image":
-          "https://www.dc.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg"
+          "https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2022/01/Sin-titulo-14.png?fit=790%2C432&ssl=1"
     },
     {
       "superhero": "Green Lantern",
@@ -273,72 +273,107 @@ class ListPage extends StatelessWidget {
       // ),
 
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: superheroes.length,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            padding: const EdgeInsets.all(14.0),
-            margin:
-                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(16.0),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(14),
-                  child: Image.network(
-                    "https://www.dc.com/sites/default/files/Char_Gallery_Batman_DTC1018_6053f2162bdf03.97426416.jpg",
-                    height: 280.0,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(
-                  height: 4.0,
-                ),
-                Text(
-                  "Batman",
-                  style: GoogleFonts.manrope(
-                    fontSize: 26.0,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black.withOpacity(0.80),
-                  ),
-                ),
-                Text(
-                  "Bruce Wayne",
-                  style: GoogleFonts.manrope(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black.withOpacity(0.80),
-                  ),
-                ),
-                Text(
-                  "DC Comics",
-                  style: GoogleFonts.manrope(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black.withOpacity(0.80),
-                  ),
-                ),
-                Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                  maxLines: 4,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.manrope(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black.withOpacity(0.80),
-                  ),
-                ),
-                const SizedBox(
-                  height: 8.0,
-                ),
-              ],
-            ),
+          return MyItemListWidget(
+            // image: superheroes[index]["image"],
+            // name: superheroes[index]["superhero"],
+            // alias: superheroes[index]["alter_ego"],
+            // publisher: superheroes[index]["publisher"],
+            data: superheroes[index],
           );
         },
+      ),
+    );
+  }
+}
+
+class MyItemListWidget extends StatelessWidget {
+  // String image;
+  // String name;
+  // String alias;
+  // String publisher;
+  Map<String, dynamic> data;
+
+  MyItemListWidget({
+    // required this.image,
+    // required this.name,
+    // required this.alias,
+    // required this.publisher,
+    required this.data,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(14.0),
+      margin: const EdgeInsets.symmetric(
+        vertical: 12.0,
+        horizontal: 14.0,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16.0),
+        boxShadow: [
+          BoxShadow(
+              blurRadius: 12,
+              color: Colors.black.withOpacity(0.08),
+              offset: const Offset(4, 4)),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(14),
+            child: Image.network(
+              data["image"],
+              height: 280.0,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const SizedBox(
+            height: 4.0,
+          ),
+          Text(
+            data["superhero"],
+            style: GoogleFonts.manrope(
+              fontSize: 26.0,
+              fontWeight: FontWeight.w600,
+              color: Colors.black.withOpacity(0.80),
+            ),
+          ),
+          Text(
+            data["alter_ego"],
+            style: GoogleFonts.manrope(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.black.withOpacity(0.80),
+            ),
+          ),
+          Text(
+            data["publisher"],
+            style: GoogleFonts.manrope(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.black.withOpacity(0.80),
+            ),
+          ),
+          Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            maxLines: 4,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.manrope(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.black.withOpacity(0.80),
+            ),
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+        ],
       ),
     );
   }

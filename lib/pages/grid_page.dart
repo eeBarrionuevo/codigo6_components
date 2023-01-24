@@ -205,20 +205,24 @@ class GridPage extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         childAspectRatio: 0.8,
-        children: [
-          Text("Hola"),
-          ...List.generate(
-              superheroes.length,
-              (index) => ItemSuperheroWidget(
-                    dataSuperhero: superheroes[index],
-                  )),
-          Text("Hola"),
-        ],
+        // children: [
+        //   Text("Hola"),
+        //   ...List.generate(
+        //       superheroes.length,
+        //       (index) => ItemSuperheroWidget(
+        //             dataSuperhero: superheroes[index],
+        //           )),
+        //   Text("Hola"),
+        // ],
+
         // children:
         //     List.generate(superheroes.length, (index) => ItemSuperheroWidget()),
 
-        // children:
-        //     superheroes.map((mandarina) => ItemSuperheroWidget()).toList(),
+        children: superheroes
+            .map((mandarina) => ItemSuperheroWidget(
+                  dataSuperhero: mandarina,
+                ))
+            .toList(),
         // children: [
         //   ...superheroes.map((mandarina) => ItemSuperheroWidget()).toList(),
         // ],
@@ -270,21 +274,21 @@ class ItemSuperheroWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "Batman",
+            dataSuperhero["superhero"],
             style: GoogleFonts.manrope(
               fontSize: 16.0,
               fontWeight: FontWeight.w600,
             ),
           ),
           Text(
-            "Bruce Wayne",
+            dataSuperhero["alter_ego"],
             style: GoogleFonts.manrope(
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
             ),
           ),
           Text(
-            "DC Comics",
+            dataSuperhero["publisher"],
             style: GoogleFonts.manrope(
               fontSize: 14.0,
               fontWeight: FontWeight.w500,
